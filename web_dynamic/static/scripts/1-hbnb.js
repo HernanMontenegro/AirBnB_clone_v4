@@ -8,7 +8,7 @@ window.onload = function() {
             let amenName = $(li).text();
             let h4 = $('DIV.amenities h4');
 
-            console.log(this.checked);
+            console.log(amenCheckState.prop('checked'));
 
             if (this.checked) {
                 //amenCheckState.prop('checked', false);
