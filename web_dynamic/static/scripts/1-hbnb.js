@@ -15,6 +15,15 @@ window.onload = function() {
             for (let li of listAmenities) {
                 let amenCheckState = $(li).first();
                 let amenName = $(li).first().next().text();
+                console.log("Target LI: ");
+                console.log($(li));
+                console.log("===============");
+                console.log("first child: ");
+                console.log(amenCheckState);
+                console.log("=============");
+                console.log("second child: ");
+                console.log(amenName);
+                console.log("=============");
                 if (amenCheckState.is(':checked')) {
                     if (firstTime) {
                         selectedAmenitiesText = amenName;
