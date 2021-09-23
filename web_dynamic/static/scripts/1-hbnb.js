@@ -7,15 +7,17 @@ window.onload(function() {
 
 function fillAmenities()
 {
-    let checkedOnes = [];
     let listAmenities = $("DIV.amenities.popover ul li");
+    let selectedAmenitiesText = "";
     $('DIV.amenities h4').empty();
     for (let li of listAmenities) {
         let amenCheckState = $(li).first();
         let amenName = $(li).first().next().text();
         if (amenCheckState.is(':checked')) {
-            checkedOnes.push(amenCheckState);
-            $('DIV.amenities h4').text(amenName);
+            console.log("soy yo: " + amenName);
+            selectedAmenitiestext += `, ${amenName}`;
         }
     }
+
+    $('DIV.amenities').first().next().text(selectedAmenitiestext);
 }
