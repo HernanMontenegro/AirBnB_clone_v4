@@ -16,7 +16,9 @@ header .logo {
 
 div[api_status] {
     right: 30px;
+    height: 40px;
+    width: 40px;
+    display: block;
     border-radius: 40px;
-    vertical-align: center;
     background-color: #cccccc;
 }
