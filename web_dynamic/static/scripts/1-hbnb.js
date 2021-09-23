@@ -15,8 +15,8 @@ $(document).ready(function () {
         }
       }
 
-      if (checkedAmenitiesength > 0) {
-        $('div.amenities h4').text(checkedAmenitiesength.join(', '));
+      if (checkedAmenities.length > 0) {
+        $('div.amenities h4').text(checkedAmenities.join(', '));
       } else {
         $('div.amenities h4').text('&nbsp;');
       }
