@@ -13,12 +13,3 @@ header .logo {
 .available {
     background-color: #ff545f;
 }
-
-#api_status {
-    right: 30px;
-    height: 40px;
-    width: 40px;
-    display: block;
-    border-radius: 40px;
-    background-color: #cccccc;
-}
