@@ -1,9 +1,9 @@
-window.onload(function() {
+window.onload = function() {
     let listAmenities = $("DIV.amenities.popover ul li");
     for (let li of listAmenities) {
         $(li).first().change(fillAmenities());
     }
-});
+};
 
 function fillAmenities()
 {
