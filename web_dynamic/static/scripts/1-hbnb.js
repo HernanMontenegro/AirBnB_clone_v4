@@ -5,6 +5,10 @@ window.onload = function() {
             let listAmenities = $("DIV.amenities DIV.popover ul li");
             let selectedAmenitiesText = "";
             let h4 = $('DIV.amenities h4');
+            let firstTime = true;
+
+            console.log(h4);
+            console.log(h4.text());
 
             h4.empty();
 
@@ -12,6 +16,11 @@ window.onload = function() {
                 let amenCheckState = $(li).first();
                 let amenName = $(li).first().next().text();
                 if (amenCheckState.is(':checked')) {
+                    if (firstTime) {
+                        selectedAmenitiesText = amenName;
+                        firstTime = false;
+                        continue;
+                    }
                     selectedAmenitiestext += `, ${amenName}`;
                 }
             }
