@@ -1,7 +1,7 @@
 window.onload = function() {
     let listAmenities = $("DIV.amenities DIV.popover ul li");
     for (let li of listAmenities) {
-        $(li).first().click(function() {
+        $(li).first().change(function() {
             let listAmenities = $("DIV.amenities DIV.popover ul li");
             let selectedAmenitiesText = "";
             let h4 = $('DIV.amenities h4');
