@@ -2,7 +2,7 @@ $(document).ready(function () {
   let listAmenities = $("DIV.amenities DIV.popover ul li");
 
   for (let li of listAmenities) {
-    $(li).first().click(function () {
+    $(li).first().change(function () {
       let checkedAmenities = [];
       let dataName = $(this).data('name');
       console.log(dataName);
