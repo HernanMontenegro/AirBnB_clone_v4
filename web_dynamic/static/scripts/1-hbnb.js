@@ -7,13 +7,15 @@ window.onload = function() {
         console.log("CCCCCCC");
         console.log(li);
         console.log("CCCCCC");
-        $(li).first().change(fillAmenities());
+        $(li).first().click(fillAmenities(this));
     }
 };
 
-function fillAmenities()
+function fillAmenities(elem)
 {
     console.log("d");
+    console.log(elem);
+    return;
     let listAmenities = $("DIV.amenities DIV.popover ul li");
     let selectedAmenitiesText = "";
     $('DIV.amenities').first().next().empty();
