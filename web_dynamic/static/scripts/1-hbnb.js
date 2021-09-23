@@ -1,6 +1,6 @@
 window.onload = function() {
     console.log("a");
-    let listAmenities = $("DIV.amenities.popover ul li");
+    let listAmenities = $("DIV.amenities.popover ul");
     console.log(listAmenities);
     for (let li of listAmenities) {
         console.log(`c ${li}`);
