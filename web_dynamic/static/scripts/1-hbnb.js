@@ -1,6 +1,6 @@
 window.onload = function() {
     console.log("a");
-    let listAmenities = $("DIV.amenities DIV.popover ul");
+    let listAmenities = $("DIV.amenities DIV.popover ul li");
     console.log(listAmenities);
     console.log(listAmenities.text());
     for (let li of listAmenities) {
@@ -14,7 +14,7 @@ window.onload = function() {
 function fillAmenities()
 {
     console.log("d");
-    let listAmenities = $("DIV.amenities DIV.popover ul");
+    let listAmenities = $("DIV.amenities DIV.popover ul li");
     let selectedAmenitiesText = "";
     $('DIV.amenities').first().next().empty();
 
