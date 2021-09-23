@@ -20,6 +20,8 @@ window.onload = function() {
                 console.log("===============");
                 console.log("first child: ");
                 console.log(amenCheckState);
+                console.log("Is checked?");
+                console.log(amenCheckState.is(':checked'));
                 console.log("=============");
                 console.log("second child: ");
                 console.log(amenName);
