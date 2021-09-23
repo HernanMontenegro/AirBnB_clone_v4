@@ -14,7 +14,7 @@ header .logo {
     background-color: #ff545f;
 }
 
-div[api_status] {
+#api_status {
     right: 30px;
     height: 40px;
     width: 40px;
