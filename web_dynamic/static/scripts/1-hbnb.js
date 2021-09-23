@@ -4,7 +4,7 @@ $(document).ready(function () {
   for (let li of listAmenities) {
     console.log($(li).children(":first"));
     console.log("========================");
-    $(li).first().change(function () {
+    $(li).children(":first").change(function () {
       let checkedAmenities = [];
       let dataName = $(li).text();
       console.log(dataName);
