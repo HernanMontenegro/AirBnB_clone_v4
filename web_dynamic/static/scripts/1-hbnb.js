@@ -7,16 +7,19 @@ window.onload = function() {
             let amenCheckState = $(li).first();
             let amenName = $(li).text();
             let h4 = $('DIV.amenities h4');
+
+            console.log(this.checked);
+
             if (this.checked) {
                 //amenCheckState.prop('checked', false);
-                console.log("falso");
+                // console.log("falso");
                 let idx = array.indexOf(amenName);
                 if (idx !== -1) {
                     array.splice(idx, 1);
                 }
             } else {
                 //amenCheckState.prop('checked', true);
-                console.log("true");
+                // console.log("true");
                 checkedOnes.push(amenName);
             }
 
