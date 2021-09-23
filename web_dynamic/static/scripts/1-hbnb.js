@@ -20,5 +20,5 @@ window.onload = function () {
       } else {
         $('div.amenities h4').text('&nbsp;');
       }
-    }
+    });
 };
