@@ -1,5 +1,6 @@
 window.onload = function() {
     let listAmenities = $("DIV.amenities DIV.popover ul li");
+    let checkedOnes = [];
 
     for (let li of listAmenities) {
         $(li).first().click(function() {
@@ -9,11 +10,17 @@ window.onload = function() {
             if (amenCheckState.is(':checked')) {
                 amenCheckState.prop('checked', false);
                 console.log("falso");
+                let idx = array.indexOf(amenName);
+                if (idx !== -1) {
+                    array.splice(idx, 1);
+                }
             } else {
                 amenCheckState.prop('checked', true);
                 console.log("true");
-                h4.append(amenName);
+                checkedOnes.push(amenName);
             }
+
+            h4.text(checkedOnes.join(', '));
         });
     }
 };
