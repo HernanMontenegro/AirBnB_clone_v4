@@ -4,7 +4,9 @@ window.onload = function() {
     console.log(listAmenities);
     console.log(listAmenities.text());
     for (let li of listAmenities) {
-        console.log(`c ${li}`);
+        console.log("CCCCCCC");
+        console.log(li);
+        log
         $(li).first().change(fillAmenities());
     }
 };
