@@ -25,6 +25,7 @@ window.onload = function() {
                 }
             }
 
+            console.log("result " + selectedAmenitiesText);
             h4.text(selectedAmenitiestext);
         });
     }
