@@ -16,8 +16,7 @@ $(document).ready(function () {
       }
 
       if (checkedAmenities.length > 0) {
-        let result = checkedAmenities[0] + checkedAmenities.splice(0, 1).join(', ');
-        $('div.amenities h4').text(result);
+        $('div.amenities h4').text(checkedAmenities.join(', '));
       } else {
         $('div.amenities h4').html('&nbsp;');
       }
