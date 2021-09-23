@@ -1,11 +1,12 @@
 $(document).ready(function () {
   let listAmenities = $("DIV.amenities DIV.popover ul li");
-  let checkedOnes = [];
 
   for (let li of listAmenities) {
     $(li).first().click(function () {
       let checkedAmenities = [];
       let dataName = $(this).data('name');
+      console.log(dataName);
+      console.log("I'm Checked? " + this.checked);
       if (this.checked) {
         checkedAmenities.push(dataName);
       } else {
