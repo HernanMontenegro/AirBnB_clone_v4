@@ -4,7 +4,9 @@ window.onload = function() {
         $(li).first().click(function() {
             let listAmenities = $("DIV.amenities DIV.popover ul li");
             let selectedAmenitiesText = "";
-            $('DIV.amenities').first().next().empty();
+            let h4 = $('DIV.amenities h4');
+
+            h4.empty();
 
             for (let li of listAmenities) {
                 let amenCheckState = $(li).first();
@@ -14,7 +16,7 @@ window.onload = function() {
                 }
             }
 
-            $('DIV.amenities').first().next().text(selectedAmenitiestext);
+            h4.text(selectedAmenitiestext);
         });
     }
 };
