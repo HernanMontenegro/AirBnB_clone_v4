@@ -12,9 +12,10 @@ function fillAmenities()
     $('DIV.amenities h4').empty();
     for (let li of listAmenities) {
         let amenCheckState = $(li).first();
+        let amenName = $(li).first().next().text();
         if (amenCheckState.is(':checked')) {
             checkedOnes.push(amenCheckState);
-            $('DIV.amenities h4').text($(li));
+            $('DIV.amenities h4').text(amenName);
         }
     }
 }
