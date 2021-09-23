@@ -6,7 +6,7 @@ window.onload = function() {
     for (let li of listAmenities) {
         console.log("CCCCCCC");
         console.log(li);
-        log
+        console.log("CCCCCC");
         $(li).first().change(fillAmenities());
     }
 };
