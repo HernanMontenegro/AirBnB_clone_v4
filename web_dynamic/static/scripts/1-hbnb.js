@@ -1,4 +1,4 @@
-window.onload = function () {
+$(document).ready(function () {
   let listAmenities = $("DIV.amenities DIV.popover ul li");
   let checkedOnes = [];
 
@@ -21,4 +21,5 @@ window.onload = function () {
         $('div.amenities h4').text('&nbsp;');
       }
     });
-};
+  }
+});
