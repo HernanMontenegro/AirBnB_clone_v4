@@ -15,7 +15,8 @@ function fillAmenities()
         amenCheckState.prop('checked', true);
         if (amenCheckState.is(':checked')) {
             checkedOnes.push(amenCheckState);
-            $('DIV.amenities h4').text($(li).second());
+            const txtName = $(li).first().next().text();
+            $('DIV.amenities h4').text(txtName);
         }
     }
 }
