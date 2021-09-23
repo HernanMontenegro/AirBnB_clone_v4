@@ -7,7 +7,7 @@ window.onload = function() {
         console.log("CCCCCCC");
         console.log(li);
         console.log("CCCCCC");
-        console.log($(li).first());
+        console.log(li.first());
         $(li).first().click(function() {
             console.log("d");
             return;
