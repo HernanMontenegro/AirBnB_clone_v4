@@ -12,14 +12,14 @@ window.onload = function() {
 function fillAmenities()
 {
     console.log("d");
-    let listAmenities = $("DIV.amenities.popover ul li");
+    let listAmenities = $("DIV.amenities DIV.popover ul");
     let selectedAmenitiesText = "";
-    $('DIV.amenities h4').empty();
+    $('DIV.amenities').first().next().empty();
+
     for (let li of listAmenities) {
         let amenCheckState = $(li).first();
         let amenName = $(li).first().next().text();
         if (amenCheckState.is(':checked')) {
-            console.log("soy yo: " + amenName);
             selectedAmenitiestext += `, ${amenName}`;
         }
     }
