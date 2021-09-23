@@ -7,6 +7,7 @@ $(document).ready(function () {
       let dataName = $(this).data('name');
       console.log(dataName);
       console.log($(li).first().text());
+      console.log($(li).text());
       console.log("I'm Checked? " + $(li).first().is(':checked'));
       console.log("I'm Checked? " + $(li).first().attr('checked'));
       console.log("I'm Checked? " + $(li).first().prop('checked'));
