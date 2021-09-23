@@ -1,8 +1,8 @@
 window.onload(function() {
     let listAmenities = $("DIV.amenities.popover ul li");
     for (let li of listAmenities) {
-        $(li).first().prop('checked', true);
         $(li).first().change(fillAmenities());
+        $(li).first().prop('checked', true);
     }
 });
 
