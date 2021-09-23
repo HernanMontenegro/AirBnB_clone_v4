@@ -21,12 +21,12 @@ window.onload = function() {
                 console.log("first child: ");
                 console.log(amenCheckState);
                 console.log("Is checked?");
-                console.log(amenCheckState.is(':checked'));
+                console.log(amenCheckState.prop('checked'));
                 console.log("=============");
                 console.log("second child: ");
                 console.log(amenName);
                 console.log("=============");
-                if (amenCheckState.is(':checked')) {
+                if (amenCheckState.prop('checked') == true) {
                     if (firstTime) {
                         selectedAmenitiesText = amenName;
                         firstTime = false;
