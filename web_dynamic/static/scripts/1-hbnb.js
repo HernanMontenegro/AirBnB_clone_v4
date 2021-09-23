@@ -1,6 +1,7 @@
 window.onload(function() {
     let listAmenities = $("DIV.amenities.popover ul li");
     for (let li of listAmenities) {
+        amenCheckState.prop('checked', true);
         $(li).first().change(fillAmenities());
     }
 });
@@ -12,7 +13,7 @@ function fillAmenities()
     $('DIV.amenities h4').empty();
     for (let li of listAmenities) {
         let amenCheckState = $(li).first();
-        amenCheckState.prop('checked', true);
+        
         if (amenCheckState.is(':checked')) {
             checkedOnes.push(amenCheckState);
             const txtName = $(li).first().next().text();
