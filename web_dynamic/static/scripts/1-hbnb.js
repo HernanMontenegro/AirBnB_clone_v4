@@ -3,14 +3,14 @@ window.onload = function() {
     let listAmenities = $("DIV.amenities.popover ul li");
     console.log(`b ${listAmenities}`);
     for (let li of listAmenities) {
-
+        console.log(`c ${li}`);
         $(li).first().change(fillAmenities());
     }
 };
 
 function fillAmenities()
 {
-    console.log("c");
+    console.log("d");
     let listAmenities = $("DIV.amenities.popover ul li");
     let selectedAmenitiesText = "";
     $('DIV.amenities h4').empty();
