@@ -1,6 +1,5 @@
 window.onload = function() {
     let listAmenities = $("DIV.amenities DIV.popover ul li");
-    let checkedOnes = [];
 
     for (let li of listAmenities) {
         $(li).first().click(function() {
@@ -13,7 +12,7 @@ window.onload = function() {
             } else {
                 amenCheckState.prop('checked', true);
                 console.log("true");
-                h4.text(amenName);
+                h4.append(amenName);
             }
         });
     }
