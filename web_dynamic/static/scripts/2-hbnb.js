@@ -23,7 +23,7 @@ $(document).ready(function () {
     });
   }
 
-  fetch("http://0.0.0.0:5001/api/v1/status/")
+  fetch("http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/status/")
     .then(resp => {
       if(resp.ok) {
         $("div#api_status").addClass("available");
