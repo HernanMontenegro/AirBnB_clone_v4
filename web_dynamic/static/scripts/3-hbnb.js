@@ -34,9 +34,9 @@ $(document).ready(function () {
       return resp.text().then(text => {throw new Error(text)}) 
     });
 
-    fetch('http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/')
-      .then(resp => {
-        
+    $.post( "http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/", {} )
+      .done(function(data) {
+        alert(data);
       });
 });
 
