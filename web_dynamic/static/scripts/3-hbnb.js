@@ -34,10 +34,29 @@ $(document).ready(function () {
       return resp.text().then(text => {throw new Error(text)}) 
     });
     
-    $.post("http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/", {},
-    function(data, status){
-      alert("Data: " + data + "\nStatus: " + status);
-      console.log(data);
-    });
-});
+    // $.post("http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/", {},
+    // function(data, status){
+    //   if (status.)
+    //   alert("Data: " + data + "\nStatus: " + status);
+    //   console.log(data);
+    // });
+  
+  $.ajax({
+    type: 'post',
+    url: 'http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/',   
+    data: {},
+    xhrFields: {
+      withCredentials: false
+    },  
+    headers: {
 
+    }, 
+    success: function (data) {
+        console.log('Success');
+        console.log(data);
+    },  
+    error: function () {
+        console.log('We are sorry but our servers are having an issue right now');
+    }
+  })
+});
