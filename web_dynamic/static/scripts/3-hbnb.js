@@ -23,7 +23,7 @@ $(document).ready(function () {
     });
   }
 
-  // cambiar URL
+  // cambiar URL http://0.0.0.0:5001/api/v1/status/
   fetch("http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/status/")
     .then(resp => {
       if(resp.ok) {
@@ -33,4 +33,10 @@ $(document).ready(function () {
       $("div#api_status").removeClass("available");
       return resp.text().then(text => {throw new Error(text)}) 
     });
+
+    fetch('http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/')
+      .then(resp => {
+        
+      });
 });
+
