@@ -56,14 +56,13 @@ $(document).ready(function () {
       console.log('Success');
       console.log(data);
       // Loop section
-      $("section.places").append("<article></article>");
-      let art = $("section.places article");
-      let str = [];
       data.forEach(element => {
         console.log(element);
-        str.push(String(element));
+        $("section.places").append("<article></article>");
+        let art = $("section.places").last();
+
+        art.text(element);
       });
-      art.text(str.join(', '));
     },
     error: function () {
       console.log('We are sorry but our servers are having an issue right now');
