@@ -3,11 +3,14 @@ header {
     height: 70px;
     width: 100%;
     border-bottom: 1px solid #CCCCCC;
+    display: flex;
+    flex-direction: row;
 }
 header .logo {
     background: url("../images/logo.png") no-repeat;
     left: 20px;
     height: 100%;
+    flex: 1;
 }
 
 .available {
@@ -20,4 +23,5 @@ header #api_status {
     width: 40px;
     border-radius: 40px;
     background-color: #cccccc;
+    flex: 1;
 }
