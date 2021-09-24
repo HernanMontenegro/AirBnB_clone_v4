@@ -44,7 +44,8 @@ $(document).ready(function () {
   $.ajax({
     type: 'post',
     url: 'http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/',   
-    data: {},
+    contentType: 'application/json',
+    data: JSON.stringify({}),
     xhrFields: {
       withCredentials: false
     },  
