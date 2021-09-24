@@ -33,10 +33,11 @@ $(document).ready(function () {
       $("div#api_status").removeClass("available");
       return resp.text().then(text => {throw new Error(text)}) 
     });
-
-    $.post( "http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/", {} )
-      .done(function(data) {
-        alert(data);
-      });
+    
+    $.post("http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/", {},
+    function(data, status){
+      alert("Data: " + data + "\nStatus: " + status);
+      console.log(data);
+    });
 });
 
