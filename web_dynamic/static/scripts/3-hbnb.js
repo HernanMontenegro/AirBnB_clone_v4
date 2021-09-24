@@ -60,7 +60,8 @@ $(document).ready(function () {
       let art = $("section.places article");
       let str = [];
       data.forEach(element => {
-        str.push(element);
+        console.log(element);
+        str.push(String(element));
       });
       art.text(str.join(', '));
     },
