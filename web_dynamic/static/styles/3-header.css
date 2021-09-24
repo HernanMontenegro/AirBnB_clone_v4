@@ -14,11 +14,10 @@ header .logo {
     background-color: #ff545f !important;
 }
 
-#api_status {
+header #api_status {
     right: 30px;
     height: 40px;
     width: 40px;
-    display: block;
     border-radius: 40px;
     background-color: #cccccc;
 }
