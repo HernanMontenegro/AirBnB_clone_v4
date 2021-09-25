@@ -34,7 +34,9 @@ $(document).ready(function () {
       return resp.text().then(text => {throw new Error(text)}) 
     });
     
-    AjaxCall();
+    //AjaxCall();
+    doAjax("http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/")
+      .then(data => console.log(data));
 
     // $.post("http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/", {},
     // function(data, status){
@@ -93,15 +95,6 @@ function doRequest (url) {
   return new Promise(function () {
     fetch(url).then(res => res.json())
   });
-}
-
-async function AjaxCall() 
-{
-  console.log("llegue")
-  let places = await doAjax("http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/");
-  //let users = await doAjax(`http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/users/${places.user_id}`);
-  console.log(`saaaaaas ${places.name}`);
-  //console.log(users);
 }
 
 function doAjax(ajaxurl, data = {}) {
