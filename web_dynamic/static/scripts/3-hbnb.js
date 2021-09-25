@@ -56,7 +56,8 @@ $(document).ready(function () {
       console.log('Success');
       console.log(data);
       // Loop section
-      await data.forEach(async (element) => {
+      for (const elment of data)
+      {
         console.log(element);
         let str = `<article><div class="title_box"><h2>${element.name}</h2><div class="price_by_night">$${element.price_by_night}</div></div>`;
         str += '<div class="information">';
@@ -69,8 +70,9 @@ $(document).ready(function () {
         //const arr = JSON.parse(res);
         console.log(res);
         return;
-
-        $("section.places").append();
+      }
+      // data.forEach(async (element) => {
+      //   $("section.places").append();
 
         
         /*
