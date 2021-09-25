@@ -46,9 +46,9 @@ async function Sas()
   placeData.forEach(place => {
     let str = `<article><div class="title_box"><h2>${place.name}</h2><div class="price_by_night">$${place.price_by_night}</div></div>`;
     str += '<div class="information">';
-    str += appendText("Guest", palceData.max_guest, "max_guest");
-    str += appendText("Bedroom", palceData.number_rooms, "number_rooms");
-    str += appendText("Bathroom", palceData.number_bathrooms, "number_bathrooms");
+    str += appendText("Guest", place.max_guest, "max_guest");
+    str += appendText("Bedroom", place.number_rooms, "number_rooms");
+    str += appendText("Bathroom", place.number_bathrooms, "number_bathrooms");
     str += "</div>";
 
     userData.forEach(usr => {
