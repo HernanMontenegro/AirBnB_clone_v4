@@ -55,12 +55,14 @@ async function Sas()
       if (usr.id == place.user_id)
       ownerData[place.user_id] = usr;
     });
+    
 
     str += `<div class="user"><b>Owner:</b> ${ownerData[place.user_id].first_name} ${ownerData[place.user_id].last_name}</div>`;
     str += `<div class="description">${place.description}</div>`;
     $("section.places").append(str);
   });
-  console.log(ownerData);
+
+  console.log(userData);
 }
 
 async function getResponse(url, method = 'POST') {
