@@ -95,9 +95,10 @@ function doRequest (url) {
   });
 }
 
-async function AjaxCall() 
+function AjaxCall() 
 {
-  let places = await doAjax("http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/");
+  console.log("llegue");
+  let places = doAjax("http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/");
   //let users = await doAjax(`http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/users/${places.user_id}`);
   console.log(places);
   //console.log(users);
