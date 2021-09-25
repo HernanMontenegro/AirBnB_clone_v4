@@ -37,14 +37,8 @@ $(document).ready(function () {
     let place = null;
     let user = null;
 
-    //AjaxCall();
-    doAjax("http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/")
-      .then(data => place = data);
-    doAjax(`http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/users/${place[0].user_id}`)
-      .then(data => user = data);
-
-    console.log(place);
-    console.log(user);
+    AjaxCall();
+    
 
     // $.post("http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/", {},
     // function(data, status){
@@ -97,6 +91,17 @@ function appendText(field, elementInfo)
     orgin +=  "</div>";
   
   return origin;
+}
+
+async function AjaxCall()
+{
+  let place = await doAjax("http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/")
+      .then(data => place = data);
+  let user = await doAjax(`http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/users/${place[0].user_id}`)
+      .then(data => user = data);
+
+    console.log(place);
+    console.log(user);
 }
 
 async function doAjax(ajaxurl, data = {}) {
