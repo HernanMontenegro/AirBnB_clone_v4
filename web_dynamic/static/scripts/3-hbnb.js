@@ -34,15 +34,18 @@ $(document).ready(function () {
       return resp.text().then(text => {throw new Error(text)}) 
     });
 
-  let placeData = null; 
-  getResponse('http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/').then(data => placeData = data.json());
-  let userData = null;
-  getResponse('http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/users').then(data => userData = data.json());
+    Sas();
+});
 
-    console.log("====================== ALERTA, ALERTA, EL PSICOLOGO ESTA EN LA PUERTA ==============================");
-    console.log(placeData);
-    console.log(userData);
-    console.log("====================================================");
+async function Sas()
+{
+  let placeData = await getResponse('http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/');
+  let userData = await getResponse('http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/users');
+
+  console.log("====================== ALERTA, ALERTA, EL PSICOLOGO ESTA EN LA PUERTA ==============================");
+  console.log(placeData);
+  console.log(userData);
+  console.log("====================================================");
 
   let ownerData = {};
   placeData.forEach(place => {
@@ -63,8 +66,8 @@ $(document).ready(function () {
     $("section.places").append(str);
   });
   console.log(ownerData);
-});
- 
+}
+
 async function getResponse(url) {
   let resp = [];
   await $.ajax({
