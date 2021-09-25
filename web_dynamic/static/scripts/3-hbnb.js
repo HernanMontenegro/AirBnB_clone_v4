@@ -52,7 +52,7 @@ $(document).ready(function () {
     headers: {
 
     },
-    success: function (data) {
+    success: async function (data) {
       console.log('Success');
       console.log(data);
       // Loop section
