@@ -34,8 +34,8 @@ $(document).ready(function () {
       return resp.text().then(text => {throw new Error(text)}) 
     });
 
-  placeData = getResponse('http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/');
-  userData = getResponse('http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/users')
+  const placeData = getResponse('http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/');
+  const userData = getResponse('http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/users')
 
     console.log("====================== ALERTA, ALERTA, EL PSICOLOGO ESTA EN LA PUERTA ==============================");
     console.log(placeData);
