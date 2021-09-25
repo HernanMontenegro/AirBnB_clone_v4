@@ -64,9 +64,9 @@ $(document).ready(function () {
           str += appendText("Bedroom", element.number_rooms);
           str += appendText("Bathroom", element.number_bathrooms);
         str += "</div>";
+        console.log("EEEE AMIGO SOY YO");
         const res = await doRequest(`http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/users/${element.user_id}`);
         //const arr = JSON.parse(res);
-        console.log("EEEE AMIGO SOY YO");
         console.log(res);
         return;
 
