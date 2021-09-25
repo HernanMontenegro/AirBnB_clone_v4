@@ -97,7 +97,7 @@ function doRequest (url) {
   });
 }
 
-function doAjax(ajaxurl, data = {}) {
+async function doAjax(ajaxurl, data = {}) {
   let response;
 
   try {
