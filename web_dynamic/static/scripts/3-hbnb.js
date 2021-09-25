@@ -39,13 +39,10 @@ $(document).ready(function () {
 
 async function Sas()
 {
-  let placeData = await getResponse('http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/');
+  let placeData = await getResponse('http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/', 'GET');
   console.log("PlaceData ya retorno vieja");
   console.log(placeData);
-  let userData = null;
-  await getResponse('http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/users/').then(val => {
-    userData = val; 
-  });
+  let userData = getResponse('http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/users/', 'GET');
   console.log("userData ya retorno vieja");
   console.log(userData);
   return;
@@ -77,10 +74,10 @@ async function Sas()
   console.log(ownerData);
 }
 
-async function getResponse(url) {
+async function getResponse(url, method = 'post') {
   let resp = [];
   await $.ajax({
-    type: 'post',
+    type: method,
     url: url,
     contentType: 'application/json',
     data: JSON.stringify({}),
