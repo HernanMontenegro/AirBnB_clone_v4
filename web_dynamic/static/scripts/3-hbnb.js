@@ -100,7 +100,7 @@ async function AjaxCall()
   console.log("llegue")
   let places = await doAjax("http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/");
   //let users = await doAjax(`http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/users/${places.user_id}`);
-  console.log(places);
+  console.log(`saaaaaas ${places}`);
   //console.log(users);
 }
 
