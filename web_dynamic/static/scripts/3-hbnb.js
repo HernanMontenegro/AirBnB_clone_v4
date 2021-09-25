@@ -34,11 +34,17 @@ $(document).ready(function () {
       return resp.text().then(text => {throw new Error(text)}) 
     });
 
-    let 
+    let place = null;
+    let user = null;
 
     //AjaxCall();
     doAjax("http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/")
-      .then(data => console.log(data));
+      .then(data => place = data);
+    doAjax(`http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/users/${place.user_id}`)
+      .then(data => user = data);
+
+    console.log(place);
+    console.log(user);
 
     // $.post("http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/", {},
     // function(data, status){
@@ -91,12 +97,6 @@ function appendText(field, elementInfo)
     orgin +=  "</div>";
   
   return origin;
-}
-
-function doRequest (url) {
-  return new Promise(function () {
-    fetch(url).then(res => res.json())
-  });
 }
 
 async function doAjax(ajaxurl, data = {}) {
