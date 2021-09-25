@@ -58,7 +58,8 @@ $(document).ready(function () {
       // Loop section
       data.forEach(element => {
         console.log(element);
-        $("section.places").add("article").text(element);
+        $("section.places").append("<article></article>");
+        $("section.places").find('.child:last').text(element);
       });
     },
     error: function () {
