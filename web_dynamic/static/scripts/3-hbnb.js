@@ -104,7 +104,13 @@ async function doAjax(ajaxurl, data = {}) {
     result = await $.ajax({
         url: ajaxurl,
         type: 'POST',
-        data: data,
+        contentType: 'application/json',
+        data: JSON.stringify(data),
+        xhrFields: {
+          withCredentials: false
+        },  
+        headers: {
+        },
         sucess: function (data) {response = data},
     });
     console.log("RESULT:");
