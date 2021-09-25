@@ -39,7 +39,7 @@ $(document).ready(function () {
 
 async function Sas()
 {
-  let placeData = await getResponse('http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/', 'GET');
+  let placeData = await getResponse('http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/');
   console.log("PlaceData ya retorno vieja");
   console.log(placeData);
   let userData = getResponse('http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/users/', 'GET');
@@ -76,20 +76,32 @@ async function Sas()
 
 async function getResponse(url, method = 'post') {
   let resp = [];
-  await $.ajax({
-    type: method,
-    url: url,
-    contentType: 'application/json',
-    data: JSON.stringify({}),
-    xhrFields: {
-      withCredentials: false
-    },  
-    headers: {
-    },
-    success: function (data) {
-      resp = data;
-    }
-  });
+  if (method == "post") {
+    await $.ajax({
+      type: method,
+      url: url,
+      contentType: 'application/json',
+      data: JSON.stringify({}),
+      xhrFields: {
+        withCredentials: false
+      },  
+      headers: {
+      },
+      success: function (data) {
+        resp = data;
+      }
+    });
+  }
+  else if (method == "get") {
+    await $.ajax({
+      type: method,
+      url: url,
+      success: function (data) {
+        resp = data;
+      }
+    });
+  }
+
   return (resp);
 }
 
