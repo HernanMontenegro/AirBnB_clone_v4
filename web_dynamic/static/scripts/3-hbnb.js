@@ -64,7 +64,7 @@ $(document).ready(function () {
           str += appendText("Bedroom", element.number_rooms);
           str += appendText("Bathroom", element.number_bathrooms);
         str += "</div>";
-        $("section.places").append();
+        $("section.places").append(str);
 
         
         /*
