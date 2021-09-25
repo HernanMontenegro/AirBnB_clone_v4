@@ -40,12 +40,14 @@ $(document).ready(function () {
 async function Sas()
 {
   let placeData = await getResponse('http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/');
-  let userData = await getResponse('http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/users');
+  let userData = await getResponse('http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/users/');
 
   console.log("====================== ALERTA, ALERTA, EL PSICOLOGO ESTA EN LA PUERTA ==============================");
   console.log(placeData);
   console.log(userData);
   console.log("====================================================");
+
+  return;
 
   let ownerData = {};
   placeData.forEach(place => {
