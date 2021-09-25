@@ -58,7 +58,31 @@ $(document).ready(function () {
       // Loop section
       data.forEach(element => {
         console.log(element);
-        $("section.places").append(`<article><div class="title_box"><h2>${element.name}</h2><div class="price_by_night">$ ${element.price_by_night}</div></div><div class="information"><div class="max_guest">${element.max_guest} Guest ${element.max_guest}</div><div class="number_rooms">${element.number_rooms} Bedroom ${element.number_rooms}s </div><div class="number_bathrooms">${element.number_bathrooms} Bathroom ${element.number_bathrooms}s</div></div>`);
+        let str = `<article><div class="title_box"><h2>${element.name}</h2><div class="price_by_night">$${element.price_by_night}</div></div>`;
+        str += '<div class="information">';
+          str += appendText("Guest", element.max_guest);
+          str += appendText("Bedroom", element.number_rooms);
+          str += appendText("Bathroom", element.number_bathrooms);
+        str += "</div>";
+        const res = await doRequest(`http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/users/${element.user_id}`);
+        const arr = JSON.parse(res);
+        console.log(arr);
+        return;
+
+        $("section.places").append();
+
+        
+        /*
+        <div class="user">
+        <b>Owner:</b> ${element.user.first_name} ${element.user.last_name}</div><div class="description"> ${element.description}</div>
+
+      -------------------------------------
+          <div class="number_rooms">{{ place.number_rooms }} Bedroom{% if place.number_rooms != 1 %}s{% endif %}</div>
+            <div class="number_bathrooms">{{ place.number_bathrooms }} Bathroom{% if place.number_bathrooms != 1 %}s{% endif %}</div>
+	  </div>
+
+        */
+        
       });
     },
     error: function () {
@@ -66,3 +90,25 @@ $(document).ready(function () {
     }
   })
 });
+
+function appendText(field, elementInfo)
+{
+  let orgin = `<div class="max_guest">${elementInfo} ${field}`;
+    if (elementInfo != 1)
+      orgin += "s";
+    orgin +=  "</div>";
+  
+  return origin;
+}
+
+function doRequest (url) {
+  return new Promise(function (resolve, reject) {
+    req(url, function (error, res, body) {
+      if (!error && res.statusCode === 200) {
+        resolve(body);
+      } else {
+        reject(error);
+      }
+    });
+  });
+}
