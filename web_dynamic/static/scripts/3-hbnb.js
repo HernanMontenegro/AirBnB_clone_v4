@@ -99,7 +99,7 @@ async function AjaxCall()
   let user = null;
   await doAjax("http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/")
       .then(data => place = data);
-  await fetch(`http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/users/${place[0].user_id}`)
+  await doAjax(`http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/users/${place[0].user_id}`)
       .then(data => {console.log(data.json());user = data});
 
     console.log(place);
