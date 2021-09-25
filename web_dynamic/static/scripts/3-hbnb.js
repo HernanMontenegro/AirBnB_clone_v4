@@ -112,7 +112,8 @@ async function doAjax(ajaxurl, data = {}) {
         type: 'POST',
         data: data
     });
-
+    console.log("RESULT:");
+    console.log(result);
     return result;
   } catch (error) {
       console.error(error);
