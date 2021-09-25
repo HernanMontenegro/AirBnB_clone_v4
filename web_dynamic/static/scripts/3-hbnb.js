@@ -58,8 +58,7 @@ $(document).ready(function () {
       // Loop section
       data.forEach(element => {
         console.log(element);
-        $("section.places").append("<article></article>");
-        $("section.places").find('.child:last').text(element);
+        $("section.places").append(`<article><div class="title_box"><h2>${element.name}</h2><div class="price_by_night">$ ${element.price_by_night}</div></div><div class="information"><div class="max_guest">${element.max_guest} Guest ${element.max_guest}</div><div class="number_rooms">${element.number_rooms} Bedroom ${element.number_rooms}s </div><div class="number_bathrooms">${element.number_bathrooms} Bathroom ${element.number_bathrooms}s</div></div>`);
       });
     },
     error: function () {
