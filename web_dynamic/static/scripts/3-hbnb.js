@@ -95,15 +95,11 @@ function appendText(field, elementInfo)
 
 async function AjaxCall()
 {
-  await doAjax("http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/users/3a40159f-cd65-4c2f-8729-d9fd1b83d790").then(data = console.log(data));
-
-  return;
-
   let place = null;
   let user = null;
   await doAjax("http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/")
       .then(data => place = data);
-  await doAjax(`http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/users/${place[0].user_id}`)
+  await fetch(`http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/users/${place[0].user_id}`)
       .then(data => user = data);
 
     console.log(place);
