@@ -111,7 +111,10 @@ async function doAjax(ajaxurl, data = {}) {
         },  
         headers: {
         },
-        sucess: function (data) {response = data},
+        sucess: function (data) {
+          console.log("ewewewewewewewewewew");
+          response = data
+        },
     });
     console.log("RESULT:");
     console.log(response);
