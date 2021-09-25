@@ -101,7 +101,7 @@ async function doAjax(ajaxurl, data = {}) {
   let response;
 
   try {
-    result = await $.ajax({
+    response = await $.ajax({
         url: ajaxurl,
         type: 'POST',
         contentType: 'application/json',
