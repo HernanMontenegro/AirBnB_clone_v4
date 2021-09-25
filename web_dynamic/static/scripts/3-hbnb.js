@@ -74,9 +74,9 @@ async function Sas()
   console.log(ownerData);
 }
 
-async function getResponse(url, method = 'post') {
+async function getResponse(url, method = 'POST') {
   let resp = [];
-  if (method == "post") {
+  if (method == "POST") {
     await $.ajax({
       type: method,
       url: url,
@@ -92,7 +92,7 @@ async function getResponse(url, method = 'post') {
       }
     });
   }
-  else if (method == "get") {
+  else if (method == "GET") {
     await $.ajax({
       type: method,
       url: url,
