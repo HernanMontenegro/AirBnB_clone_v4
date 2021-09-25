@@ -42,7 +42,7 @@ async function Sas()
   let placeData = await getResponse('http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/');
   console.log("PlaceData ya retorno vieja");
   console.log(placeData);
-  let userData = await getResponse('http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/users/');
+  let userData = getResponse('http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/users/');
   console.log("userData ya retorno vieja");
   console.log(userData);
   return;
@@ -78,7 +78,7 @@ async function getResponse(url) {
   let resp = [];
   await $.ajax({
     type: 'post',
-    url: url,   
+    url: url,
     contentType: 'application/json',
     data: JSON.stringify({}),
     xhrFields: {
@@ -88,8 +88,6 @@ async function getResponse(url) {
 
     },
     success: function (data) {
-      console.log('Success');
-      console.log(data);
       resp = data;
     }
   });
