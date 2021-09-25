@@ -58,9 +58,9 @@ $(document).ready(function () {
 
   $("section.places").append(str);
 });
-
+ 
 function getResponse(url) {
-  let resp = null;
+  let resp = [];
   $.ajax({
     type: 'post',
     url: url,   
