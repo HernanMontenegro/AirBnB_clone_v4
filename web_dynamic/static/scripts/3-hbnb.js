@@ -65,8 +65,8 @@ $(document).ready(function () {
           str += appendText("Bathroom", element.number_bathrooms);
         str += "</div>";
         const res = await doRequest(`http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/users/${element.user_id}`);
-        const arr = JSON.parse(res);
-        console.log(arr);
+        //const arr = JSON.parse(res);
+        console.log(res);
         return;
 
         $("section.places").append();
@@ -102,13 +102,7 @@ function appendText(field, elementInfo)
 }
 
 function doRequest (url) {
-  return new Promise(function (resolve, reject) {
-    req(url, function (error, res, body) {
-      if (!error && res.statusCode === 200) {
-        resolve(body);
-      } else {
-        reject(error);
-      }
-    });
+  return new Promise(function () {
+    fetch(url).then(res => res.json())
   });
 }
