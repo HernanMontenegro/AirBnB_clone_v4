@@ -92,11 +92,10 @@ $(document).ready(function () {
 
 function appendText(field, elementInfo, divClassName)
 {
-  console.log("APPEND TEXT: " + field + ", " + elementInfo);
-  let orgin = `<div class="${divClassName}">${elementInfo} ${field}`;
+  let res = `<div class="${divClassName}">${elementInfo} ${field}`;
     if (elementInfo != 1)
-      orgin += "s";
-    orgin +=  "</div>";
+      res += "s";
+    res +=  "</div>";
   
-  return origin;
+  return res;
 }
