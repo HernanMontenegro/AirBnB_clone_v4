@@ -37,6 +37,11 @@ $(document).ready(function () {
   placeData = getResponse('http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/');
   userData = getResponse('http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/users')
 
+    console.log("====================== ALERTA, ALERTA, EL PSICOLOGO ESTA EN LA PUERTA ==============================");
+    console.log(placeData);
+    console.log(userData);
+    console.log("====================================================");
+
   let ownerData = {};
   placeData.forEach(place => {
     let str = `<article><div class="title_box"><h2>${place.name}</h2><div class="price_by_night">$${place.price_by_night}</div></div>`;
