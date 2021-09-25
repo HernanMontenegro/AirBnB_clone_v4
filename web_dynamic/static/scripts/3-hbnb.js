@@ -34,6 +34,8 @@ $(document).ready(function () {
       return resp.text().then(text => {throw new Error(text)}) 
     });
     
+    AjaxCall();
+
     // $.post("http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/", {},
     // function(data, status){
     //   if (status.)
@@ -41,58 +43,40 @@ $(document).ready(function () {
     //   console.log(data);
     // });
   
-  $.ajax({
-    type: 'post',
-    url: 'http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/',   
-    contentType: 'application/json',
-    data: JSON.stringify({}),
-    xhrFields: {
-      withCredentials: false
-    },  
-    headers: {
+  // $.ajax({
+  //   type: 'post',
+  //   url: 'http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/',   
+  //   contentType: 'application/json',
+  //   data: JSON.stringify({}),
+  //   xhrFields: {
+  //     withCredentials: false
+  //   },  
+  //   headers: {
 
-    },
-    success: async function (data) {
-      console.log('Success');
-      console.log(data);
-      // Loop section
-      for (const elment of data)
-      {
-        console.log(element);
-        let str = `<article><div class="title_box"><h2>${element.name}</h2><div class="price_by_night">$${element.price_by_night}</div></div>`;
-        str += '<div class="information">';
-          str += appendText("Guest", element.max_guest);
-          str += appendText("Bedroom", element.number_rooms);
-          str += appendText("Bathroom", element.number_bathrooms);
-        str += "</div>";
-        console.log("EEEE AMIGO SOY YO");
-        const res = await doRequest(`http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/users/${element.user_id}`);
-        //const arr = JSON.parse(res);
-        console.log("EEEE AMIGO SOY YO denuevo");
-        console.log(res);
-        return;
-      }
-      // data.forEach(async (element) => {
-      //   $("section.places").append();
+  //   },
+  //   success: function (data) {
+  //     // data.forEach(async (element) => {
+  //     //   $("section.places").append();
 
         
-        /*
-        <div class="user">
-        <b>Owner:</b> ${element.user.first_name} ${element.user.last_name}</div><div class="description"> ${element.description}</div>
+  //       /*
+  //       <div class="user">
+  //       <b>Owner:</b> ${element.user.first_name} ${element.user.last_name}</div><div class="description"> ${element.description}</div>
 
-      -------------------------------------
-          <div class="number_rooms">{{ place.number_rooms }} Bedroom{% if place.number_rooms != 1 %}s{% endif %}</div>
-            <div class="number_bathrooms">{{ place.number_bathrooms }} Bathroom{% if place.number_bathrooms != 1 %}s{% endif %}</div>
-	  </div>
+  //     -------------------------------------
+  //         <div class="number_rooms">{{ place.number_rooms }} Bedroom{% if place.number_rooms != 1 %}s{% endif %}</div>
+  //           <div class="number_bathrooms">{{ place.number_bathrooms }} Bathroom{% if place.number_bathrooms != 1 %}s{% endif %}</div>
+	//   </div>
 
-        */
+  //       */
         
-      // });
-    },
-    error: function () {
-      console.log('We are sorry but our servers are having an issue right now');
-    }
-  })
+  //     // });
+  //   },
+  //   error: function () {
+  //     console.log('We are sorry but our servers are having an issue right now');
+  //   }
+  // })
+
 });
 
 function appendText(field, elementInfo)
@@ -109,4 +93,28 @@ function doRequest (url) {
   return new Promise(function () {
     fetch(url).then(res => res.json())
   });
+}
+
+async function AjaxCall() 
+{
+  let places = await doAjax("http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/");
+  let users = await doAjax(`http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/users/${places.user_id}`);
+  console.log(places);
+  console.log(users);
+}
+
+async function doAjax(args) {
+  let result ;
+
+  try {
+    result = await $.ajax({
+        url: ajaxurl,
+        type: 'POST',
+        data: args
+    });
+
+    return result;
+  } catch (error) {
+      console.error(error);
+  }
 }
