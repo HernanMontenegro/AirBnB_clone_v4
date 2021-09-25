@@ -39,7 +39,7 @@ $(document).ready(function () {
 
   let ownerData = {};
   placeData.forEach(place => {
-    let str = `<article><div class="title_box"><h2>${place.name}</h2><div class="price_by_night">$${palceData.price_by_night}</div></div>`;
+    let str = `<article><div class="title_box"><h2>${place.name}</h2><div class="price_by_night">$${place.price_by_night}</div></div>`;
     str += '<div class="information">';
     str += appendText("Guest", palceData.max_guest, "max_guest");
     str += appendText("Bedroom", palceData.number_rooms, "number_rooms");
@@ -53,10 +53,9 @@ $(document).ready(function () {
 
     str += `<div class="user"><b>Owner:</b> ${ownerData[place.user_id].first_name} ${ownerData[place.user_id].last_name}</div>`;
     str += `<div class="description">${place.description}</div>`;
+    $("section.places").append(str);
   });
   console.log(ownerData);
-
-  $("section.places").append(str);
 });
  
 function getResponse(url) {
