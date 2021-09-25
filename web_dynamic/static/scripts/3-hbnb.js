@@ -105,17 +105,18 @@ async function AjaxCall()
 }
 
 function doAjax(ajaxurl, data = {}) {
-  let result ;
+  let response;
 
   try {
     result = $.ajax({
         url: ajaxurl,
         type: 'POST',
-        data: data
+        data: data,
+        sucess: function (data) {response = data},
     });
     console.log("RESULT:");
-    console.log(result);
-    return result;
+    console.log(response);
+    return response;
   } catch (error) {
       console.error(error);
   }
