@@ -103,14 +103,14 @@ async function AjaxCall()
   console.log(users);
 }
 
-async function doAjax(args) {
+async function doAjax(ajaxurl, data = {}) {
   let result ;
 
   try {
     result = await $.ajax({
         url: ajaxurl,
         type: 'POST',
-        data: args
+        data: data
     });
 
     return result;
