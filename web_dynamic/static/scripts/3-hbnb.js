@@ -68,6 +68,7 @@ $(document).ready(function () {
         console.log("EEEE AMIGO SOY YO");
         const res = await doRequest(`http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/users/${element.user_id}`);
         //const arr = JSON.parse(res);
+        console.log("EEEE AMIGO SOY YO denuevo");
         console.log(res);
         return;
       }
@@ -86,7 +87,7 @@ $(document).ready(function () {
 
         */
         
-      });
+      // });
     },
     error: function () {
       console.log('We are sorry but our servers are having an issue right now');
