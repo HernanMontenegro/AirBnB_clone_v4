@@ -60,9 +60,9 @@ $(document).ready(function () {
         console.log(element);
         let str = `<article><div class="title_box"><h2>${element.name}</h2><div class="price_by_night">$${element.price_by_night}</div></div>`;
         str += '<div class="information">';
-          str += appendText("Guest", element.max_guest);
-          str += appendText("Bedroom", element.number_rooms);
-          str += appendText("Bathroom", element.number_bathrooms);
+          str += appendText("Guest", element.max_guest, "max_guest");
+          str += appendText("Bedroom", element.number_rooms, "number_rooms");
+          str += appendText("Bathroom", element.number_bathrooms, "number_bathrooms");
         str += "</div>";
         $("section.places").append(str);
 
@@ -90,9 +90,10 @@ $(document).ready(function () {
   })
 });
 
-function appendText(field, elementInfo)
+function appendText(field, elementInfo, divClassName)
 {
-  let orgin = `<div class="max_guest">${elementInfo} ${field}`;
+  console.log("APPEND TEXT: " + field + ", " + elementInfo);
+  let orgin = `<div class="${divClassName}">${elementInfo} ${field}`;
     if (elementInfo != 1)
       orgin += "s";
     orgin +=  "</div>";
