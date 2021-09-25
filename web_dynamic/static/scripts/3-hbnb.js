@@ -58,9 +58,9 @@ $(document).ready(function () {
   console.log(ownerData);
 });
  
-function getResponse(url) {
+async function getResponse(url) {
   let resp = [];
-  $.ajax({
+  await $.ajax({
     type: 'post',
     url: url,   
     contentType: 'application/json',
