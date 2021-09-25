@@ -52,11 +52,11 @@ $(document).ready(function () {
     headers: {
 
     },
-    success: async function (data) {
+    success: function (data) {
       console.log('Success');
       console.log(data);
       // Loop section
-      data.forEach(element => {
+      data.forEach(async (element) => {
         console.log(element);
         let str = `<article><div class="title_box"><h2>${element.name}</h2><div class="price_by_night">$${element.price_by_night}</div></div>`;
         str += '<div class="information">';
