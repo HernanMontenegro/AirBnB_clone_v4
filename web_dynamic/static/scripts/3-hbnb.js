@@ -33,7 +33,9 @@ $(document).ready(function () {
       $("div#api_status").removeClass("available");
       return resp.text().then(text => {throw new Error(text)}) 
     });
-    
+
+    let 
+
     //AjaxCall();
     doAjax("http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/")
       .then(data => console.log(data));
@@ -110,14 +112,13 @@ async function doAjax(ajaxurl, data = {}) {
           withCredentials: false
         },  
         headers: {
-        },
-        sucess: function (data) {
-          console.log("ewewewewewewewewewew");
-          response = data
-        },
+        }
+        // sucess: function (data) {
+        //   console.log("ewewewewewewewewewew");
+        //   response = data
+        // },
     });
-    console.log("RESULT:");
-    console.log(response);
+
     return response;
   } catch (error) {
       console.error(error);
