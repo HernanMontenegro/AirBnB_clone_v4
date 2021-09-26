@@ -8,11 +8,6 @@ $(document).ready(function () {
     Sas(checkedAmenities);
   }
 
-  // Ewe+= uwu()
-  // function uwu() {
-  //   console.log('lalallala')
-  // }
-
   for (let li of listAmenities) {
     $(li).children(":first").change(function () {
       let dataName = $(li).text();
@@ -136,7 +131,7 @@ function ArrayUnionExistence(amenityPlaceArr, amenityRequestArr)
 {
   for (let i = 0; i < amenityPlaceArr.length; i++) {
     const element = amenityPlaceArr[i];
-    if (amenityRequestArr.indexOf(element) != -1) {
+    if (amenityRequestArr.indexOf(element.name) != -1) {
       return true;
     }
   }
