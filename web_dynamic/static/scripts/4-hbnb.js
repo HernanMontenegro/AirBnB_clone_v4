@@ -1,5 +1,6 @@
 $(document).ready(function () {
   let listAmenities = $("DIV.amenities DIV.popover ul li");
+  console.log($('button').text());
   let checkedAmenities = [];
 
   for (let li of listAmenities) {
