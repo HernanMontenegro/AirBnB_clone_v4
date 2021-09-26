@@ -2,7 +2,7 @@ $(document).ready(function () {
   let listAmenities = $("DIV.amenities DIV.popover ul li");
   let checkedAmenities = [];
 
-  $('button').click(Ewe());
+  $('button').click(Ewe);
 
   function Ewe() {
     console.log("soy una figura");
