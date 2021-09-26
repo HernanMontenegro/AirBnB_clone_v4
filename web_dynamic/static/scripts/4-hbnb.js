@@ -131,7 +131,8 @@ function ArrayUnionExistence(amenityPlaceArr, amenityRequestArr)
 {
   for (let i = 0; i < amenityPlaceArr.length; i++) {
     const element = amenityPlaceArr[i];
-    if (amenityRequestArr.indexOf(element.name) != -1) {
+    let correctName = element.name.splice(2).slice(0, -1);
+    if (amenityRequestArr.indexOf(correctName) != -1) {
       return true;
     }
   }
