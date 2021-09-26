@@ -49,6 +49,7 @@ async function Sas(checkedAmenities = null)
   let userData = await getResponse('http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/users/', 'GET');
   let amenities = null;
 
+  $("section.places").text("");
   console.log(placeData);
 
   let ownerData = {};
