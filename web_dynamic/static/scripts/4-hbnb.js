@@ -21,9 +21,9 @@ $(document).ready(function () {
       } else {
         $('div.amenities h4').html('&nbsp;');
       }
-    });
 
-    console.log(checkedAmenities);
+      console.log(checkedAmenities);
+    });
   }
 
   // cambiar URL http://0.0.0.0:5001/api/v1/status/
