@@ -1,15 +1,15 @@
 $(document).ready(function () {
-  let listAmenities = $("DIV.amenities DIV.popover ul li");
-  let checkedAmenities = [];
+  const listAmenities = $('DIV.amenities DIV.popover ul li');
+  const checkedAmenities = [];
 
-  for (let li of listAmenities) {
-    $(li).children(":first").change(function () {
-      let dataName = $(li).text();
+  for (const li of listAmenities) {
+    $(li).children(':first').change(function () {
+      const dataName = $(li).text();
 
       if (this.checked) {
         checkedAmenities.push(dataName);
       } else {
-        let idx = checkedAmenities.indexOf(dataName);
+        const idx = checkedAmenities.indexOf(dataName);
         if (idx !== -1) {
           checkedAmenities.splice(idx, 1);
         }
@@ -24,13 +24,13 @@ $(document).ready(function () {
   }
 
   // cambiar URL
-  fetch("http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/status/")
+  window.fetch('http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/status/')
     .then(resp => {
-      if(resp.ok) {
-        $("div#api_status").addClass("available");
-        return resp.json()
+      if (resp.ok) {
+        $('div#api_status').addClass('available');
+        return resp.json();
       }
-      $("div#api_status").removeClass("available");
-      return resp.text().then(text => {throw new Error(text)}) 
+      $('div#api_status').removeClass('available');
+      return resp.text().then(text => { throw new Error(text); });
     });
 });

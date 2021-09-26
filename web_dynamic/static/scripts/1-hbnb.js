@@ -1,15 +1,15 @@
 $(document).ready(function () {
-  let listAmenities = $("DIV.amenities DIV.popover ul li");
-  let checkedAmenities = [];
+  const listAmenities = $('DIV.amenities DIV.popover ul li');
+  const checkedAmenities = [];
 
-  for (let li of listAmenities) {
-    $(li).children(":first").change(function () {
-      let dataName = $(li).text();
+  for (const li of listAmenities) {
+    $(li).children(':first').change(function () {
+      const dataName = $(li).text();
 
       if (this.checked) {
         checkedAmenities.push(dataName);
       } else {
-        let idx = checkedAmenities.indexOf(dataName);
+        const idx = checkedAmenities.indexOf(dataName);
         if (idx !== -1) {
           checkedAmenities.splice(idx, 1);
         }
