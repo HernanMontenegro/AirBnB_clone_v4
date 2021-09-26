@@ -47,7 +47,7 @@ async function Sas()
   console.log(placeData);
 
   let ownerData = {};
-  placeData.forEach(place => {
+  placeData.forEach( async (place) => {
 
     if (checkedAmenities.length > 0) {
       amenities = await getResponse(`http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places/${place.id}/amenities`, 'GET');
