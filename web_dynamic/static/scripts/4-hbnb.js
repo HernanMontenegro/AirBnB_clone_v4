@@ -58,7 +58,7 @@ async function Sas()
       console.log(checkedAmenities);
       if (!ArrayUnionExistence(amenities, checkedAmenities)) {
         console.log("no hay ameniti tas re pobre jaja ;c");
-        continue;
+        return;
       }
     }
 
