@@ -1,6 +1,6 @@
 $(document).ready(function () {
   let listAmenities = $("DIV.amenities DIV.popover ul li");
-  console.log($('button').text());
+  $('button').text()
   let checkedAmenities = [];
 
   for (let li of listAmenities) {
@@ -42,11 +42,26 @@ async function Sas()
 {
   let placeData = await getResponse('http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/');
   let userData = await getResponse('http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/users/', 'GET');
+  let amenities = null;
 
   console.log(placeData);
 
   let ownerData = {};
   placeData.forEach(place => {
+
+    if (checkedAmenities.length > 0) {
+      amenities = await getResponse(`http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places/${place.id}/amenities`, 'GET');
+      // Existe algun amenity?
+      console.log("8===========D Requested: 8===========D");
+      console.log(amenities);
+      console.log("8============D Checked: 8===============D");
+      console.log(checkedAmenities);
+      if (!ArrayUnionExistence(amenities, checkedAmenities)) {
+        console.log("no hay ameniti tas re pobre jaja ;c");
+        continue;
+      }
+    }
+
     let str = `<article><div class="title_box"><h2>${place.name}</h2><div class="price_by_night">$${place.price_by_night}</div></div>`;
     str += '<div class="information">';
     str += appendText("Guest", place.max_guest, "max_guest");
@@ -105,4 +120,15 @@ function appendText(field, elementInfo, divClassName)
     res +=  "</div>";
   
   return res;
+}
+
+function ArrayUnionExistence(amenityPlaceArr, amenityRequestArr)
+{
+  for (let i = 0; i < amenityPlaceArr.length; i++) {
+    const element = amenityPlaceArr[i];
+    if (amenityRequestArr.indexOf(element) != -1) {
+      return true;
+    }
+  }
+  return false;
 }
