@@ -22,6 +22,8 @@ $(document).ready(function () {
         $('div.amenities h4').html('&nbsp;');
       }
     });
+
+    console.log(checkedAmenities);
   }
 
   // cambiar URL http://0.0.0.0:5001/api/v1/status/
@@ -61,8 +63,6 @@ async function Sas()
     str += `<div class="description">${place.description}</div>`;
     $("section.places").append(str);
   });
-
-  console.log(userData);
 }
 
 async function getResponse(url, method = 'POST') {

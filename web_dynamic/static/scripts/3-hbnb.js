@@ -60,8 +60,6 @@ async function Sas()
     str += `<div class="description">${place.description}</div>`;
     $("section.places").append(str);
   });
-
-  console.log(userData);
 }
 
 async function getResponse(url, method = 'POST') {
