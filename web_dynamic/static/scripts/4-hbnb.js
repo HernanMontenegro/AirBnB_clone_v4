@@ -33,12 +33,12 @@ $(document).ready(function () {
       }
       $("div#api_status").removeClass("available");
       return resp.text().then(text => {throw new Error(text)}) 
-    });
+  });
 
-    Sas();
+  Sas(checkedAmenities);
 });
 
-async function Sas()
+async function Sas(checkedAmenities = null)
 {
   let placeData = await getResponse('http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/');
   let userData = await getResponse('http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/users/', 'GET');
