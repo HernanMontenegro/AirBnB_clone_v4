@@ -21,8 +21,6 @@ $(document).ready(function () {
       } else {
         $('div.amenities h4').html('&nbsp;');
       }
-
-      console.log(checkedAmenities);
     });
   }
 
@@ -44,6 +42,8 @@ async function Sas()
 {
   let placeData = await getResponse('http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places_search/');
   let userData = await getResponse('http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/users/', 'GET');
+
+  console.log(placeData);
 
   let ownerData = {};
   placeData.forEach(place => {
