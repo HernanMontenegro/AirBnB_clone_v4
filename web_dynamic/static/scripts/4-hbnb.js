@@ -1,7 +1,8 @@
 $(document).ready(function () {
   let listAmenities = $("DIV.amenities DIV.popover ul li");
-  $('button').text()
   let checkedAmenities = [];
+
+  $('button').click(Sas(checkedAmenities));
 
   for (let li of listAmenities) {
     $(li).children(":first").change(function () {
