@@ -4,9 +4,7 @@ $(document).ready(function () {
 
   $('button').click(Ewe);
 
-  function Ewe() {
-    console.log("soy una figura");
-  }
+  let Ewe = ()=>Sas(checkedAmenities);
 
   for (let li of listAmenities) {
     $(li).children(":first").change(function () {
