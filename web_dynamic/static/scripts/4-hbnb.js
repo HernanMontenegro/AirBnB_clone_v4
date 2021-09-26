@@ -50,7 +50,6 @@ async function Sas(checkedAmenities = null)
   let amenities = null;
 
   $("section.places").text("");
-  console.log(placeData);
 
   let ownerData = {};
   placeData.forEach( async (place) => {
@@ -58,12 +57,7 @@ async function Sas(checkedAmenities = null)
     if (checkedAmenities.length > 0) {
       amenities = await getResponse(`http://afa6415d533b.0a98cdc3.hbtn-cod.io:5001/api/v1/places/${place.id}/amenities`, 'GET');
       // Existe algun amenity?
-      console.log("8===========D Requested: 8===========D");
-      console.log(amenities);
-      console.log("8============D Checked: 8===============D");
-      console.log(checkedAmenities);
       if (!ArrayUnionExistence(amenities, checkedAmenities)) {
-        console.log("no hay ameniti tas re pobre jaja ;c");
         return;
       }
     }
