@@ -2,7 +2,11 @@ $(document).ready(function () {
   let listAmenities = $("DIV.amenities DIV.popover ul li");
   let checkedAmenities = [];
 
-  $('button').click(Sas(checkedAmenities));
+  $('button').click(Ewe());
+
+  function Ewe() {
+    console.log("soy una figura");
+  }
 
   for (let li of listAmenities) {
     $(li).children(":first").change(function () {
