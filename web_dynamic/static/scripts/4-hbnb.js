@@ -1,10 +1,13 @@
 $(document).ready(function () {
   let listAmenities = $("DIV.amenities DIV.popover ul li");
   let checkedAmenities = [];
+  let Ewe = ()=>Sas(checkedAmenities);
 
   $('button').click(Ewe);
-
-  let Ewe = ()=>Sas(checkedAmenities);
+  // Ewe+=
+  // function uwu() {
+    
+  // }
 
   for (let li of listAmenities) {
     $(li).children(":first").change(function () {
